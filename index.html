@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="minephoto" href="minephoto.jpg"/>
+    <title>LinkTree</title>
+
+    <style>
+        /* Style for the "Clique aqui amor - Fale comigo no Whatsapp 🤤🔥🔞" button */
+        .whatsapp-button {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            margin: 5px;
+        }
+
+        .whatsapp-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+
+    <script>
+        var phones = [
+            119911111111,
+            119911111112,
+            119911111113,
+            119911111114,
+        ];
+        var currentPhoneIndex = 0;
+
+        function redirectToWhatsApp() {
+            var mensagemWhats = 'Eu quero testar!';
+
+            var url = 'https://api.whatsapp.com/send?phone=' +
+                phones[currentPhoneIndex] +
+                '&text=' +
+                encodeURIComponent(mensagemWhats);
+
+            currentPhoneIndex = (currentPhoneIndex + 1) % phones.length;
+
+            window.open(url, '_blank'); // Abre o link em uma nova aba/janela
+        }
+    </script>
+</head>
+<body>
+<section class="animated-background">
+    <div id="stars1"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
+</section>
+<!-- End of Animation -->
+
+<a id="profilePicture" href="popup">
+    <img src="minephoto.jpg" alt="Profile Picture">
+</a>
+
+<div id="userName">
+    <b style="color: #000000;">Rafa Fontana</b>
+</div>
+
+<div id="descrition">
+    <b style="color: #000000a3;">Aposto que você não pensou que me veria aqui ☺️</b>
+</div>
+
+<div id="links">
+
+
+    <a class="link" href="#" onclick="redirectToWhatsApp()">
+        <i class="fab fa-whatsapp">&nbsp;</i><b>Clique aqui amor - Fale comigo no Whatsapp 🤤🔥🔞</b>
+    </a>
+</div>
+
+</body>
+</html>
